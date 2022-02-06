@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DemoExperionAngular2022"
+    }
+  },
+  "defaultProject": "DemoExperionAngular2022",
+  "cli": {
+    "analytics": "c8d745ca-eb77-43f7-b5fd-69600c29ad6f"
+  }
 }

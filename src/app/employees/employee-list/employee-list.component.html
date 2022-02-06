@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="form-control">
+                <input type="text" class="form-control m-2" placeholder="Search text here..." [(ngModel)]="filter">
+               <p>{{filter}}</p>
+                <button class="btn btn-secondary" type="submit">Add Employee</button>
+            </div>
+            <table class="table mt-5">
+                <thead>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Designation</th>
+                    <th>Join Date</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let emp of employeeService.employees |filter: filter | paginate:{itemsPerPage:2, currentPage: page}">
+                        <td>{{emp.EmployeeId}}</td>
+                        <td>{{emp.EmployeeName}}</td>
+                        <td>{{emp.Designation}}</td>
+                        <td>{{emp.DateOfJoining  | date: 'dd-MMM-yy'}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-info" (click)="updateEmployee(emp.EmployeeId)">Edit</button> 
+                            &nbsp;
+                            <button class="btn btn-sm btn-outline-danger" (click)="deleteEmployee(emp.EmployeeId)">Del</button> 
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="footer">
+                <pagination-controls (pageChange)="page = ($event)"></pagination-controls>
+            </div>
+        </div>
+    </div>
+   
+</div>
