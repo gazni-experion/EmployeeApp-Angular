@@ -13,6 +13,7 @@
             formControlName="UserName"
             placeholder="Enter username"
             required
+            autocomplete="off"
             minlength="3"
             [ngClass]="{ 'is-invalid': formControls.UserName.touched && formControls.UserName.invalid }"
           />
@@ -26,12 +27,13 @@
         <div class="form-group m-2">
           <label for="UserPassword">Password:</label>
           <input
-            type="UserPassword"
+            type="password"
             class="form-control"
             id="UserPassword"
             formControlName="UserPassword"
             placeholder="Enter Password"
             required
+            autocomplete="off"
             minlength="3"
             [ngClass]="{ 'is-invalid': formControls.UserPassword.touched && formControls.UserPassword.invalid }"
 

@@ -7,6 +7,7 @@ import { EmployeeComponent } from './employees/employee/employee.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ManagerComponent } from './manager/manager.component';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
 
@@ -16,9 +17,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'employee', component: EmployeeComponent },
   { path: 'employee-list', component: EmployeeListComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'manager', component: ManagerComponent },
-  { path: 'coordinator', component: CoordinatorComponent },
+  { path: 'admin', component: AdminComponent,canActivate: [AuthGuard], data: { expectedRole: 'Administrator' } },
+  { path: 'manager', component: ManagerComponent,canActivate: [AuthGuard], data: { expectedRole: 'Manager' } },
+  { path: 'coordinator', component: CoordinatorComponent,canActivate: [AuthGuard], data: { expectedRole: 'Coordinator' } }
 
 ];
 

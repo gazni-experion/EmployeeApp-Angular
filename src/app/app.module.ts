@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ManagerComponent } from './manager/manager.component';
 import { CoordinatorComponent } from './coordinator/coordinator.component';
+import { AuthGuard } from 'src/app/shared/auth.guard';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { CoordinatorComponent } from './coordinator/coordinator.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
