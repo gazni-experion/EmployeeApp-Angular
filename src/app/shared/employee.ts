@@ -4,5 +4,9 @@ export class Employee {
     Designation: string='';
     DateOfJoining: Date= new Date;
     Contact: string = '';
-    Department: string='';
+    Id: number = 0;
+    IsActive: boolean = false;
 }
+
+
+// Parent child relation ----Employee child and Department parent

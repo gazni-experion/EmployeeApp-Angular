@@ -15,7 +15,7 @@
                     <th>Action</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor = "let emp of employeeService.employees |filter: filter | paginate:{itemsPerPage:2, currentPage: page}">
+                    <tr *ngFor = "let emp of employeeService.employees |filter: filter | paginate:{itemsPerPage:5, currentPage: page}">
                         <td>{{emp.EmployeeId}}</td>
                         <td>{{emp.EmployeeName}}</td>
                         <td>{{emp.Designation}}</td>
