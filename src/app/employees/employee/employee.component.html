@@ -164,7 +164,7 @@
             class="form-check-input"
             #IsActive="ngModel"
             [(ngModel)]="empService.formData.IsActive"
-            checked
+            [defaultChecked]="true"
           >
           <label class="form-check-label ms-2" for="IsActive">In Service</label>
         </div>
