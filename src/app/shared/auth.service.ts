@@ -24,12 +24,18 @@ export class AuthService {
     //calling web service and calling username and password
     console.log(user);
     console.log("Getting from api");
-    return this.httpClient.get(environment.roleUrl + '/api/users/login?username=' + user.UserName + '&password=' + user.UserPassword);
+    // return this.httpClient.get(environment.roleUrl + '/api/login?username=' + user.UserName + '&password=' + user.UserPassword);
+    return this.httpClient.post(
+      environment.apiUrl +
+      '/api/login',
+      user
+    );
   }
 
   public logout() {
     localStorage.removeItem('ACCESSROLE');
     localStorage.removeItem('USERNAME');
     sessionStorage.removeItem('USERNAME');
+    sessionStorage.removeItem('JwtTOKEN');
   }
 }

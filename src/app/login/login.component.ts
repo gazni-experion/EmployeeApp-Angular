@@ -47,11 +47,16 @@ export class LoginComponent implements OnInit {
           this.error='';
           console.log(data);
           this.loginUser = data;
+
+          //Username, Role and Token
+          sessionStorage.setItem('JwtTOKEN', this.loginUser.token);
+
+
           //Check the role based and redirects to respective pages
-          if (this.loginUser.RoleName == "Administrator") {
+          if (this.loginUser.Role == "Administrator") {
             console.log("Redirecting to Admin Page");
             localStorage.setItem("USERNAME", this.loginUser.UserName);
-            localStorage.setItem("ACCESSROLE", this.loginUser.RoleName);
+            localStorage.setItem("ACCESSROLE", this.loginUser.Role);
             sessionStorage.setItem("USERNAME", this.loginUser.UserName);
             this.router.navigateByUrl('/admin');
           }
